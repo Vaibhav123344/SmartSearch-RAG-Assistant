@@ -1,6 +1,7 @@
 # 🔍 SmartSearch RAG Assistant
 
 A powerful Streamlit-based chatbot that combines **document-based retrieval (RAG)** with **real-time web search** using Groq’s ultra-fast LLMs.
+![image](https://github.com/user-attachments/assets/41911806-c96b-43be-beb6-a3fcf6004a6a)
 
 ## 🚀 Features
 
