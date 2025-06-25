@@ -1,0 +1,13 @@
+# requirments
+streamlit
+langchain
+langchain-groq
+langchain-community
+chromadb
+huggingface-hub
+sentence-transformers
+transformers
+gtts
+python-dotenv
+pydantic
+pandas
