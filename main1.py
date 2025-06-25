@@ -18,9 +18,7 @@ from transformers import pipeline
 from gtts import gTTS
 import pandas as pd
 
-# ----------------------------------------
-# Environment & API Keys
-# ----------------------------------------
+
 groq_api_key = os.getenv("GROQ_API_KEY")
 if not groq_api_key:
     st.error("Please set the GROQ_API_KEY environment variable.")
@@ -28,9 +26,7 @@ if not groq_api_key:
 
 llm = ChatGroq(groq_api_key=groq_api_key, model="Gemma2-9b-It")
 
-# ----------------------------------------
-# Session State Initialization
-# ----------------------------------------
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "embeddings" not in st.session_state:
@@ -59,9 +55,7 @@ route_chain = ChatPromptTemplate.from_messages([
     ("human", "{question}")
 ]) | router
 
-# ----------------------------------------
-# Sidebar: Load Knowledge Sources
-# ----------------------------------------
+
 st.sidebar.header("Knowledge Base & Sources")
 url_input = st.sidebar.text_input("Enter URL to index (optional)")
 uploaded_files = st.sidebar.file_uploader("Upload PDF/TXT (optional)", accept_multiple_files=True)
@@ -108,9 +102,7 @@ if st.session_state.sources:
     for src in st.session_state.sources:
         st.sidebar.write(f"- {src}")
 
-# ----------------------------------------
-# Main Chat Interface
-# ----------------------------------------
+
 st.title("RAG Chatbot ")
 
 # Display chat history
